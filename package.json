@@ -1,0 +1,80 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "blog with react & redux",
+  "main": "index.js",
+  "scripts": {
+    "build:prod": "webpack -p --env=production",
+    "build:dev": "webpack -d --env=development",
+    "serve": "webpack-dev-server --env=development",
+    "dev": "npm run build:dev && npm run serve",
+    "start": "nodemon --exec 'npm run dev'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ashotpahlevanyan/blog.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "webpack",
+    "babel",
+    "bootstrap",
+    "sass"
+  ],
+  "author": "Ashot Pahlevanyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ashotpahlevanyan/blog/issues"
+  },
+  "homepage": "https://github.com/ashotpahlevanyan/blog#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.14",
+    "@fortawesome/free-solid-svg-icons": "^5.7.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "bootstrap": "^4.2.1",
+    "i": "^0.3.6",
+    "npm": "^6.7.0",
+    "path": "^0.12.7",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-redux": "^6.0.0",
+    "reactstrap": "^7.1.0",
+    "redux": "^4.0.1",
+    "sass": "^1.17.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.4.7",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "fibers": "^3.1.1",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jsx-loader": "^0.13.2",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9",
+    "postcss-loader": "^3.0.0",
+    "prop-types": "^15.6.2",
+    "react-hot-loader": "^4.6.5",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14",
+    "write-file-webpack-plugin": "^4.5.0"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "ignore": [
+      "node_modules",
+      ".gitignore"
+    ],
+    "watch": "src/*"
+  }
+}
