@@ -1,13 +1,11 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
 
-class FormContainer extends Component {
-	render() {
-		return (
-			<form id="article-form">
-				Hello There Yalla
-			</form>
-		);
-	}
-}
+const FormContainer = () => {
+	return (
+		<form id="article-form">
+			<h1>Hello There Yalla</h1>
+		</form>
+	);
+};
+
 export default FormContainer;
