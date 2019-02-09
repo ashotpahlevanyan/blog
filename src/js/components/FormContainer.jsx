@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
-const FormContainer = () => {
-	return (
-		<form id="article-form">
-			<h1>Hello There Yalla</h1>
-		</form>
-	);
+const propTypes = {
+	text: PropTypes.string,
 };
+
+const defaultProps = {
+	text: 'Hello',
+};
+
+class FormContainer extends PureComponent {
+	render() {
+		const { text } = this.props;
+		return (
+			<form className="article-form">
+				<h1 className="header">
+					{ text }
+				</h1>
+			</form>
+		);
+	}
+}
+
+FormContainer.propTypes = propTypes;
+FormContainer.defaultProps = defaultProps;
 
 export default FormContainer;

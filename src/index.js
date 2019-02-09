@@ -12,6 +12,10 @@ import './scss/index.scss';
 //<FontAwesomeIcon icon={faCoffee} />
 
 //const wrapper = document.getElementById('root');
-ReactDOM.render(<FormContainer />, document.getElementById('root'));
-
-module.hot.accept();
+ReactDOM.render(
+	<FormContainer text="Abrikos" />,
+	document.getElementById('root')
+);
+if(module.hot) {
+	module.hot.accept();
+}
