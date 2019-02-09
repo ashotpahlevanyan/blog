@@ -30,5 +30,12 @@ module.exports = {
 		"sinon": true
 	},
 
+	"parserOptions": {
+		"ecmaVersion": 7,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
 	"parser": "babel-eslint"
 };

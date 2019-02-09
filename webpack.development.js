@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const Fiber = require('fibers');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 const devMode = process.env.NODE_ENV !== 'production';
@@ -10,7 +11,7 @@ function buildConfig(configDirs) {
 	return {
 		mode: 'development',
 		entry: './src/index.js',
-		devtool: 'cheap-module-eval-source-map',
+		devtool: 'source-map',
 		watchOptions: {
 			poll: true,
 			ignored: /node_modules/
@@ -73,7 +74,6 @@ function buildConfig(configDirs) {
 						{
 							loader: 'css-loader',
 							options: {
-								sourceMap: true,
 								modules: true,
 								importLoaders: 2,
 							}
@@ -100,15 +100,11 @@ function buildConfig(configDirs) {
 					]
 				},
 				{
-					test: /\.(png|jpg|jpeg|gif|svg)$/,
-					use: [
-						{
-							loader: 'file-loader',
-							options: {
-								publicPath: 'assets',
-							},
-						},
-					],
+					test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2)$/,
+					loader: 'url-loader',
+					options: {
+						limit: 10000,
+					}
 				},
 			]
 		},
@@ -129,7 +125,10 @@ function buildConfig(configDirs) {
 			new MiniCssExtractPlugin({
 				filename: devMode ? '[name].css' : '[name].[hash].css',
 				chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-			})
+			}),
+			new CopyWebpackPlugin([
+				{ from: './src/assets/', to: './dist/assets/' },
+			])
 		]
 	};
 }
