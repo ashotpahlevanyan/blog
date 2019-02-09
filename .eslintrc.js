@@ -10,6 +10,9 @@ module.exports = {
 	"rules": {
 		"indent": [2, "tab", { "SwitchCase": 1, "VariableDeclarator": 1 }],
 		"no-tabs": 0,
+		"init-declarations": 0,
+		"no-console": 0,
+		"no-inline-comments": 0,
 		"arrow-body-style": [2, "always"],
 		"react/prop-types": 0,
 		"react/jsx-indent": [2, "tab"],

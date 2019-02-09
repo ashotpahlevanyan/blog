@@ -14,7 +14,7 @@ function buildConfig(configDirs) {
 		devtool: 'source-map',
 		watchOptions: {
 			poll: true,
-			ignored: /node_modules/
+			ignored: [/node_modules/, /docs/]
 		},
 		optimization: {
 			minimize: true,
