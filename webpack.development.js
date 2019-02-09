@@ -127,7 +127,7 @@ function buildConfig(configDirs) {
 				chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
 			}),
 			new CopyWebpackPlugin([
-				{ from: './src/assets/', to: './dist/assets/' },
+				{ from: './src/assets/', to: './assets/' },
 			])
 		]
 	};
