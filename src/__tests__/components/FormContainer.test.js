@@ -1,11 +1,12 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 
-jest.dontMock('./FormContainer');
+jest.dontMock('../../js/components/FormContainer');
 
-import FormContainer from './FormContainer';
+import FormContainer from '../../js/components/FormContainer';
 
 describe('Component Loads Correctly with Children', function() {
+
 	it('has a specified class', function() {
 		const component = <FormContainer text='Hello' />;
 		console.log(shallow(component).className);
@@ -20,4 +21,5 @@ describe('Component Loads Correctly with Children', function() {
 	it('contains a child h1', function() {
 		expect(render(<FormContainer text='Hello' />).find('h1').length).toBe(1);
 	});
+
 });

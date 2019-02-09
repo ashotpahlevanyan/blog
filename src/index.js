@@ -5,17 +5,21 @@ import FormContainer from "./js/components/FormContainer.jsx";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faMugHot } from '@fortawesome/free-solid-svg-icons'
 
 import './scss/index.scss';
 
-//library.add(faCoffee);
-//<FontAwesomeIcon icon={faCoffee} />
+library.add(faCoffee);
+library.add(faMugHot);
 
-//const wrapper = document.getElementById('root');
 ReactDOM.render(
-	<FormContainer text="Abrikos" />,
+	<div>
+		<FontAwesomeIcon icon={faMugHot} />
+		<FormContainer text="Olala Bebe" />
+	</div>,
 	document.getElementById('root')
 );
+
 if(module.hot) {
 	module.hot.accept();
 }

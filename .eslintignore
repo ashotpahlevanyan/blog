@@ -1,1 +1,2 @@
 **/*.test.js
+/src/__tests__
