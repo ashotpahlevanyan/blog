@@ -57,16 +57,28 @@ table {
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: #fff;
   overflow-x: hidden;
   font-size: 16px;
-  margin: 0;
-  padding: 0 0 0 0;
-  font-family: sans-serif;
+  font-family: Lato, sans-serif;
   position: relative;
+  min-height: 100%;
 }
 
+.container {
+  max-width: 992px;
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 100% !important;
+  }
+}
 /* -------------------------------------------------------------
   Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
   By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
@@ -114,6 +126,40 @@ body {
 }
 /* ==== Remote Fonts ====
 */
+.headingStyle, h1, h2, h3, h4, h5, h6 {
+  font-family: Lat, sans-serif;
+  font-weight: normal;
+  line-height: 1.2;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: left;
+  padding: 5px 10px;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 0.8em;
+}
+
+h6 {
+  font-size: 0.7em;
+}
+
 .routes {
   display: inline-block;
   margin-left: 20px;
@@ -201,7 +247,27 @@ body {
   }
 }
 .articleForm {
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
   text-align: left;
+  font-family: Lato, sans-serif;
+  font-weight: bold;
+}
+.articleForm textarea {
+  min-height: 100px;
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.articleForm label {
+  margin-bottom: 5px;
+}
+.articleForm .btn {
+  display: block;
+  margin: 0 auto;
 }
 
 .logo {
@@ -215,8 +281,8 @@ body {
   margin-right: 10px;
 }
 
-.topBar {
-  background-color: #5f4aec !important;
+.topbar {
+  background-color: #5f4aec;
 }
 
 .header {
@@ -225,6 +291,7 @@ body {
   padding: 10px 20px;
   color: white;
   text-align: left;
+  position: static;
 }
 
 .logoCompany {
@@ -264,6 +331,16 @@ body {
     margin-right: 0;
   }
 }
+/*
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
 @keyframes logoSpin {
   from {
     transform: rotate(0deg);
@@ -283,6 +360,47 @@ body {
 
 h1 {
   font-family: Roboto, sans-serif;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.articles .list {
+  padding: 0;
+  list-style: none;
+}
+.articles li + li {
+  margin-top: 10px;
+}
+.articles .article {
+  padding: 10px;
+  position: relative;
+  text-align: left;
+  background-color: #57495a;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.articles .article .title {
+  font-weight: bold;
+}
+.articles .article .content {
+  padding: 0 10px;
+}
+.articles .article .categories {
+  padding: 0 10px;
+}
+.articles .article .delete {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
 .up {
@@ -312,10 +430,32 @@ h1 {
 
 .upToTop {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 30px;
+  bottom: 20%;
 }
 
 .upToTop.hide {
   display: none;
+}
+
+.spinnerWrapper {
+  position: absolute;
+  top: 30%;
+  bottom: 20%;
+  left: 20%;
+  right: 20%;
+  text-align: center;
+  background-color: transparent;
+}
+.spinnerWrapper .spinner-border {
+  width: 6rem;
+  height: 6rem;
+}
+
+.alert.stacked {
+  position: fixed;
+  right: 30px;
+  top: 40px;
+  max-width: 80%;
+  width: 400px;
 }

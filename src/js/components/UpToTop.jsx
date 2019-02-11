@@ -17,7 +17,7 @@ class UpTopTop extends Component {
 		window.addEventListener('scroll', this.handleScroll);
 	}
 	componentWillUnmount() {
-		window.addEventListener('scroll', this.handleScroll);
+		window.removeEventListener('scroll', this.handleScroll);
 	}
 	handleScroll() {
 		const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;

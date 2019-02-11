@@ -1,4 +1,4 @@
-.articleForm {
+.addArticleForm {
   padding: 20px;
   max-width: 600px;
   width: 100%;
@@ -18,7 +18,9 @@
     margin-bottom: 5px;
   }
   .btn {
-    display: block;
-    margin: 0 auto;
+    display: inline-block;
+    & + .btn {
+      margin-left: 20px;
+    }
   }
 }

@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
 import articles from './articleReducer';
+import { reducer as reduxFormReducer } from 'redux-form';
+import { routerReducer } from 'react-router-redux';
 
 /*function articles(state = [], action) {
 	switch (action.type) {
@@ -26,7 +28,9 @@ import articles from './articleReducer';
 }*/
 
 const rootReducer = combineReducers({
-	articles
+	articles: articles,
+	routing: routerReducer,
+	form: reduxFormReducer
 });
 
 export default rootReducer;

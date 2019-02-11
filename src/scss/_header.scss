@@ -8,9 +8,10 @@
   margin-right: 10px;
 }
 
-.topBar {
-  background-color: $darkBlue !important;
+.topbar {
+  background-color: $darkBlue;
 }
+
 .header {
   background-color: transparent !important;
   height: 80px;
@@ -55,15 +56,17 @@
     margin-right: 0;
   }
 }
-//
-//// Medium devices (tablets, 768px and up)
-//@media (min-width: 768px) { ... }
-//
-//// Large devices (desktops, 992px and up)
-//@media (min-width: 992px) { ... }
-//
-//// Extra large devices (large desktops, 1200px and up)
-//@media (min-width: 1200px) { ... }
+
+/*
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
 
 
 @keyframes logoSpin {

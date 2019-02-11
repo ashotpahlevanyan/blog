@@ -1,0 +1,14 @@
+.spinnerWrapper {
+  position: absolute;
+  top: 30%;
+  bottom: 20%;
+  left: 20%;
+  right: 20%;
+  text-align: center;
+  background-color: transparent;
+
+  .spinner-border {
+    width: 6rem;
+    height: 6rem;
+  }
+}

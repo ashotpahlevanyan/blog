@@ -2,14 +2,21 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: #fff;
   overflow-x: hidden;
   font-size: 16px;
-  margin: 0;
-  padding: 0 0 0 0;
-  font-family: sans-serif;
+  font-family: Lato, sans-serif;
   position: relative;
+  min-height: 100%;
+}
+
+
+body {
 }
 
 .container {

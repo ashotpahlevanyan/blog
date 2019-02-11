@@ -49,7 +49,7 @@ class Header extends Component {
 
 	render() {
 		return (
-			<div className="topBar">
+			<div className="topbar">
 				<section className="container">
 					<Navbar color="light" className="header" expand="md">
 						<Link className="locoLink" to="/"><img src={logo} className="logo" alt="logo" /></Link>
@@ -60,7 +60,10 @@ class Header extends Component {
 						<Collapse isOpen={this.state.isOpen} navbar>
 							<Nav className="ml-auto routes" navbar>
 								<NavItem>
-									<Link to="/" onClick={this.closeNavbar}>Articles</Link>
+									<Link to="/" onClick={this.closeNavbar}>Home</Link>
+								</NavItem>
+								<NavItem>
+									<Link to="/articles" onClick={this.closeNavbar}>Articles</Link>
 								</NavItem>
 								<NavItem>
 									<Link to="/articles/new" onClick={this.closeNavbar}>New Article</Link>

@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import FormContainer from "./FormContainer.jsx";
+import { Route } from 'react-router-dom';
+
+import ArticlePage from './ArticlePage';
 import ArticlesList from './ArticlesList';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import library from './FontAwesomeLibrary';
-import Article from './Article';
+import Home from './Home';
 
 class Main extends Component {
 	render() {
 		return (
 			<section className="container">
-				{/*<FormContainer text="Olala Bebe" />*/}
-				<Article />
-				<ArticlesList />
+				<main>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/articles" component={ArticlesList} />
+					<Route exact path="/articles/new" component={ArticlePage} />
+				</main>
 			</section>
 		);
 	}
