@@ -1,22 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FormContainer from "./js/components/FormContainer.jsx";
+import { Provider } from 'react-redux';
+import store from './js/store/index';
+import App from './js/components/App';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { faMugHot } from '@fortawesome/free-solid-svg-icons'
-
-import './scss/index.scss';
-
-library.add(faCoffee);
-library.add(faMugHot);
-
+console.log(store.getState());
 ReactDOM.render(
-	<div>
-		<FontAwesomeIcon icon={faMugHot} />
-		<FormContainer text="Olala Bebe" />
-	</div>,
+	<Provider store = {store}>
+		<App />
+	</Provider>,
 	document.getElementById('root')
 );
 

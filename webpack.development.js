@@ -17,7 +17,7 @@ function buildConfig(configDirs) {
 			ignored: [/node_modules/, /docs/]
 		},
 		optimization: {
-			minimize: true,
+			minimize: false,
 			splitChunks: {
 				chunks: 'async',
 				minSize: 30000,
