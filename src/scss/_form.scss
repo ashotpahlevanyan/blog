@@ -1,0 +1,24 @@
+.articleForm {
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  text-align: left;
+  font-family: Lato, sans-serif;
+  font-weight: bold;
+
+  textarea {
+    min-height: 100px;
+    resize: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  label {
+    margin-bottom: 5px;
+  }
+  .btn {
+    display: block;
+    margin: 0 auto;
+  }
+}

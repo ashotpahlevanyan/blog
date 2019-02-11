@@ -1,9 +1,8 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import articleActionCreators from '../actions/articleActions';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import { Button } from 'reactstrap';
 
 class ArticlesList extends React.Component {
@@ -36,7 +35,8 @@ class ArticlesList extends React.Component {
 					{articles.length ? articles.map(article =>
 						<li key={article.id}>
 							<h2>{article.title}</h2>
-							<Button color="danger">Hello!</Button>
+							<Button color="danger">Secondary</Button>
+
 							<div className="content">{article.content}</div>
 							<div className="categories">{article.categories}</div>
 						</li>)
@@ -59,4 +59,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps)(ArticlesList);
+export default withRouter(connect(mapStateToProps)(ArticlesList));

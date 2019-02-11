@@ -1,0 +1,72 @@
+.logo {
+  animation: logoSpin infinite 20s linear;
+  height: 50px;
+  vertical-align: middle;
+}
+.locoLink {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.topBar {
+  background-color: $darkBlue !important;
+}
+.header {
+  background-color: transparent !important;
+  height: 80px;
+  padding: 10px 20px;
+  color: white;
+  text-align: left;
+  position: static;
+}
+
+.logoCompany {
+  color: $white;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin-right: 44px;
+  &:hover, &:focus {
+    text-decoration: none;
+    color: $lightBlue;
+  }
+}
+
+.navbar-toggler {
+  color: $white;
+  font-size: 25px;
+  padding: 5px;
+  width: 40px;
+  border: 1px solid $white;
+  &:hover, &:focus {
+    color: $darkBlue;
+    background-color: $white;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-collapse {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 80px;
+    z-index: 10;
+    border-top: 1px solid $lightBlue;
+  }
+  .logoCompany {
+    margin-right: 0;
+  }
+}
+//
+//// Medium devices (tablets, 768px and up)
+//@media (min-width: 768px) { ... }
+//
+//// Large devices (desktops, 992px and up)
+//@media (min-width: 992px) { ... }
+//
+//// Extra large devices (large desktops, 1200px and up)
+//@media (min-width: 1200px) { ... }
+
+
+@keyframes logoSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

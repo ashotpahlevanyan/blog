@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
-import FormContainer from "./FormContainer.jsx";
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { faMugHot } from '@fortawesome/free-solid-svg-icons'
-import ArticlesList from './ArticlesList';
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
+import UpToTop from './UpToTop';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import '../../scss/index.scss';
-
-library.add(faCoffee);
-library.add(faMugHot);
-
 const App = () => {
-	return <div className="container">
-		<FontAwesomeIcon icon={faMugHot} />
-		<FormContainer text="Olala Bebe" />
-		<ArticlesList />
-	</div>;
+	return (
+		<div className="app">
+			<Header />
+			<Main />
+			<Footer />
+			<UpToTop />
+		</div>
+	);
 };
 
 export default App;

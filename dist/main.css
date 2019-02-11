@@ -54,8 +54,7 @@ table {
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -65,6 +64,7 @@ body {
   margin: 0;
   padding: 0 0 0 0;
   font-family: sans-serif;
+  position: relative;
 }
 
 /* -------------------------------------------------------------
@@ -86,44 +86,236 @@ body {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 400;
-  src: url("/src/assets/fonts/Raleway-Black.eot");
-  src: url("/src/assets/fonts/Raleway-Black.eot?#iefix") format("embedded-opentype");
-  src: url("/src/assets/fonts/Raleway-Black.woff2") format("woff2");
-  src: url("/src/assets/fonts/Raleway-Black.woff") format("woff");
-  src: url("/src/assets/fonts/Raleway-Black.ttf") format("truetype");
+  src: url("/assets/fonts/Raleway-Black.eot");
+  src: url("/assets/fonts/Raleway-Black.eot?#iefix") format("embedded-opentype");
+  src: url("/assets/fonts/Raleway-Black.woff2") format("woff2");
+  src: url("/assets/fonts/Raleway-Black.woff") format("woff");
+  src: url("/assets/fonts/Raleway-Black.ttf") format("truetype");
 }
 @font-face {
   font-family: "Raleway";
   font-style: italic;
   font-weight: 400;
-  src: url("/src/assets/fonts/Raleway-BlackItalic.eot");
-  src: url("/src/assets/fonts/Raleway-BlackItalic.eot?#iefix") format("embedded-opentype");
-  src: url("/src/assets/fonts/Raleway-BlackItalic.woff2") format("woff2");
-  src: url("/src/assets/fonts/Raleway-BlackItalic.woff") format("woff");
-  src: url("/src/assets/fonts/Raleway-BlackItalic.ttf") format("truetype");
+  src: url("/assets/fonts/Raleway-BlackItalic.eot");
+  src: url("/assets/fonts/Raleway-BlackItalic.eot?#iefix") format("embedded-opentype");
+  src: url("/assets/fonts/Raleway-BlackItalic.woff2") format("woff2");
+  src: url("/assets/fonts/Raleway-BlackItalic.woff") format("woff");
+  src: url("/assets/fonts/Raleway-BlackItalic.ttf") format("truetype");
 }
 @font-face {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
-  src: url("/src/assets/fonts/Raleway-Bold.eot");
-  src: url("/src/assets/fonts/Raleway-Bold.eot?#iefix") format("embedded-opentype");
-  src: url("/src/assets/fonts/Raleway-Bold.woff2") format("woff2");
-  src: url("/src/assets/fonts/Raleway-Bold.woff") format("woff");
-  src: url("/src/assets/fonts/Raleway-Bold.ttf") format("truetype");
+  src: url("/assets/fonts/Raleway-Bold.eot");
+  src: url("/assets/fonts/Raleway-Bold.eot?#iefix") format("embedded-opentype");
+  src: url("/assets/fonts/Raleway-Bold.woff2") format("woff2");
+  src: url("/assets/fonts/Raleway-Bold.woff") format("woff");
+  src: url("/assets/fonts/Raleway-Bold.ttf") format("truetype");
 }
 /* ==== Remote Fonts ====
 */
-body {
-  background-color: green;
-  color: white;
+.routes {
+  display: inline-block;
+  margin-left: 20px;
   padding: 10px;
+}
+.routes li {
+  display: inline-block;
+}
+.routes li + li {
+  margin-left: 10px;
+}
+.routes li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 10px;
+  line-height: 1.5;
+  font-size: 16px;
+  border: 1px solid transparent;
+  font-weight: bold;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.routes li a:hover, .routes li a:active, .routes li a:focus {
+  border: 1px solie #fff;
+  color: #5f4aec;
+  background-color: #fff;
+}
+.routes li a .fa {
+  font-size: 25px;
+  vertical-align: middle;
+}
+
+@media print {
+  body {
+    font-size: 0.8em;
+  }
+
+  .noPrint {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .routes li {
+    margin-top: 5px;
+  }
+  .routes li + li {
+    margin-left: 10px;
+  }
+  .routes li a {
+    display: inline-block;
+    padding: 5px 10px;
+  }
+
+  .header .routes {
+    display: block;
+    background-color: #5f4aec;
+    font-size: 0;
+  }
+  .header .routes li {
+    display: inline-block;
+    font-size: 16px;
+    width: 32.33%;
+    margin: 0 1% 0 0;
+  }
+  .header .routes li + li {
+    margin-left: 0;
+  }
+  .header .routes li a {
+    display: block;
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  .header .routes li {
+    display: block;
+    width: 100%;
+    padding: 2px 0;
+  }
+  .header .routes li a {
+    text-align: left;
+  }
+}
+.articleForm {
+  text-align: left;
+}
+
+.logo {
+  animation: logoSpin infinite 20s linear;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.locoLink {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.topBar {
+  background-color: #5f4aec !important;
+}
+
+.header {
+  background-color: transparent !important;
+  height: 80px;
+  padding: 10px 20px;
+  color: white;
+  text-align: left;
+}
+
+.logoCompany {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin-right: 44px;
+}
+.logoCompany:hover, .logoCompany:focus {
+  text-decoration: none;
+  color: #61dafb;
+}
+
+.navbar-toggler {
+  color: #fff;
+  font-size: 25px;
+  padding: 5px;
+  width: 40px;
+  border: 1px solid #fff;
+}
+.navbar-toggler:hover, .navbar-toggler:focus {
+  color: #5f4aec;
+  background-color: #fff;
+}
+
+@media (max-width: 767px) {
+  .navbar-collapse {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 80px;
+    z-index: 10;
+    border-top: 1px solid #61dafb;
+  }
+
+  .logoCompany {
+    margin-right: 0;
+  }
+}
+@keyframes logoSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body {
+  background-color: blueviolet;
+  color: white;
   text-align: center;
-  font-size: 40px;
+  font-size: 16px;
   line-height: 1.5;
   font-family: Raleway, sans-serif;
 }
 
 h1 {
   font-family: Roboto, sans-serif;
+}
+
+.up {
+  font-size: 1.5em;
+  padding: 6px 11px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+  border-radius: 5px;
+  border: none;
+  background-color: #0c95d5;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.up:hover,
+.up:active,
+.up:focus {
+  color: #61dafb;
+  background-color: #5f4aec;
+  text-decoration: none;
+}
+
+.upToTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.upToTop.hide {
+  display: none;
 }

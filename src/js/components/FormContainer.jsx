@@ -14,7 +14,7 @@ class FormContainer extends PureComponent {
 		const { text } = this.props;
 		return (
 			<form className="article-form">
-				<h1 className="header">
+				<h1 className="">
 					{ text }
 				</h1>
 			</form>

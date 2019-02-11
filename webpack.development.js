@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -61,43 +62,72 @@ function buildConfig(configDirs) {
 					]
 				},
 				{
-					test: /\.(js|jsx)$/,
-					exclude: /node_modules/,
-					use: ['babel-loader']
-				},
-				{
-					test: /\.(sa|sc|c)ss$/,
+					test: /\.css$/,
 					use: [
 						{
-							loader: devMode ? 'style-loader' : MiniCssExtractPlugin.loader
+							loader: require.resolve('css-hot-loader')
 						},
 						{
-							loader: 'css-loader',
+							loader: MiniCssExtractPlugin.loader,
+						},
+						{
+							loader: require.resolve('css-loader'),
 							options: {
-								modules: true,
-								importLoaders: 2,
-							}
+								sourceMap: true,
+								importLoaders: 1
+							},
 						},
 						{
-							loader: 'postcss-loader',
+							loader: require.resolve('postcss-loader'),
 							options: {
 								ident: 'postcss',
-								plugins: [
-									require('autoprefixer')({
-										'browsers': ['> 1%', 'last 2 versions']
+								sourceMap: true,
+								plugins: () => [
+									require('postcss-flexbugs-fixes'),
+									autoprefixer({
+										browsers: [
+											'>1%',
+											'last 4 versions',
+											'Firefox ESR',
+											'not ie < 9',
+										],
+										flexbox: 'no-2009',
 									}),
-								]
+								],
+							},
+						},
+					],
+				},
+				{
+					test: /\.(sa|sc)ss$/,
+					use: [
+						{
+							loader: require.resolve('css-hot-loader')
+						},
+						{
+							loader: MiniCssExtractPlugin.loader,
+							options: {
+								sourceMap: true
 							}
 						},
 						{
-							loader: 'sass-loader',
-							options: {
+							loader: "css-loader", options: {
+								sourceMap: true
+							}
+						},
+						{
+							loader: "sass-loader", options: {
 								sourceMap: true,
 								implementation: require('sass'),
 								fiber: Fiber
 							}
 						}
 					]
+				},
+				{
+					test: /\.(js|jsx)$/,
+					exclude: /node_modules/,
+					use: ['babel-loader']
 				},
 				{
 					test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2)$/,
@@ -114,6 +144,7 @@ function buildConfig(configDirs) {
 			hot: true,
 			open: true,
 			progress: true,
+			historyApiFallback: true
 		},
 		plugins: [
 			new webpack.HotModuleReplacementPlugin(),
@@ -123,6 +154,7 @@ function buildConfig(configDirs) {
 				inject:true
 			}),
 			new MiniCssExtractPlugin({
+				sideEffects: [ '*.css' ],
 				filename: devMode ? '[name].css' : '[name].[hash].css',
 				chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
 			}),

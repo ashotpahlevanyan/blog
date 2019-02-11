@@ -9,4 +9,14 @@ body {
   margin: 0;
   padding: 0 0 0 0;
   font-family: sans-serif;
+  position: relative;
+}
+
+.container {
+  max-width: 992px;
+}
+@media (max-width: 992px) {
+  .container {
+    width: 100% !important;
+  }
 }
