@@ -1,7 +1,5 @@
-.addArticleForm {
+.postForm {
   padding: 20px;
-  max-width: 600px;
-  width: 100%;
   display: block;
   margin: 0 auto;
   text-align: left;
@@ -22,5 +20,13 @@
     & + .btn {
       margin-left: 20px;
     }
+  }
+  .help-block {
+    background-color: $errorColor;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 0 15px;
+    @include border-radius(5px);
   }
 }

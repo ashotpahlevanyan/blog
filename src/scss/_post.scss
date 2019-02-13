@@ -1,26 +1,29 @@
 .details {
   @include border-radius(5px);
-  background-color: #fff;
+  background-color: $lightCyan;
   color: #000;
-  &.container {
-    padding: 0;
-  }
-  * {
-    padding: 5px 20px;
-  }
+
   label {
+    padding: 5px 20px;
     color: blueviolet;
     font-weight: bold;
     font-size: 18px;
   }
   .title {
-    margin: 0 0 10px;
-    padding: 5px 40px;
+    margin: 0;
+    padding: 10px 20px;
+    @include border-radius-separate(5px, 5px, 0 , 0);
     line-height: 1;
     background-color: $cyan;
   }
   .categories {
-    padding: 5px 40px;
+    display: inline-block;
+    padding: 10px 20px;
+  }
+  .content {
+    @include border-radius-separate(0, 0, 5px, 5px);
+    padding: 20px;
+    background-color: #fff;
   }
 
 }

@@ -14,16 +14,12 @@
     padding: 10px;
     position: relative;
     text-align: left;
-    background-color: lavenderblush;
+    background-color: lavender;
     @include border-radius(5px);
     cursor: pointer;
 
     .title {
       font-weight: bold;
-    }
-    .content {
-      display: none;
-      padding: 0 10px;
     }
   }
 }
