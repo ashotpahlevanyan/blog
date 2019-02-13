@@ -1,5 +1,5 @@
-import { articleActionCreators as articles} from './articleActions';
+import { postActionTypes as posts} from './posts';
 
 export const actions = {
-	articleActions: articles
+	posts: posts
 };
