@@ -14,7 +14,7 @@
     padding: 10px;
     position: relative;
     text-align: left;
-    background-color: steelblue;
+    background-color: lavenderblush;
     @include border-radius(5px);
     cursor: pointer;
 
@@ -29,12 +29,9 @@
       @extend .headingStyle;
       @extend h3;
     }
-
-    .delete {
-      display: none;
-      position: absolute;
-      top: 15px;
-      right: 15px;
+    .badge {
+      vertical-align: middle;
+      margin: 2px 3px;
     }
   }
 }
