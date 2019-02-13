@@ -17,8 +17,6 @@ class Header extends Component {
 			alert(nextProps.deletedPost.error.message || 'Could not delete. Please try again.');
 		} else if(nextProps.deletedPost.post && !nextProps.deletedPost.error) {//delete success
 			this.context.router.history.push('/');
-		} else {
-
 		}
 	}
 

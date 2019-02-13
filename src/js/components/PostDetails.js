@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { fetchPost } from '../actions/posts';
+import LoadingSpinner from './LoadingSpinner';
+import renderCategories from './renderCategories';
 
 class PostDetails extends Component {
   static contextTypes = {
@@ -21,18 +23,21 @@ class PostDetails extends Component {
   render() {
     const { post, loading, error } = this.props.activePost;
     if (loading) {
-      return <div className="container">Loading...</div>;
+      return <LoadingSpinner color='info' size='lg'/>;
     } else if(error) {
-      return  <div className="alert alert-danger">{error.message}</div>
+      return  <div className="alert alert-danger">{error.message}</div>;
     } else if(!post) {
-      return <span />
+      return <h3>"Post Is Empty"</h3>;
     }
 
     return (
-      <div className="container">
-        <h3>{post.title}</h3>
-        <h6>Categories: {post.categories}</h6>
-        <p>{post.content}</p>
+      <div className="container details">
+	      <label>Title :</label>
+        <h1 className="title">{post.title}</h1>
+	      <label>Categories :</label>
+        <div className="categories">{renderCategories(post.categories)}</div>
+	      <label>Content :</label>
+        <p className="content">{post.content}</p>
       </div>
     );
   }

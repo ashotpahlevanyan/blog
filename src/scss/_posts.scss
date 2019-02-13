@@ -25,14 +25,16 @@
       display: none;
       padding: 0 10px;
     }
-    .categories {
-      @extend .headingStyle;
-      @extend h3;
-    }
-    .badge {
-      vertical-align: middle;
-      margin: 2px 3px;
-    }
   }
 }
+
+.categories {
+  @extend .headingStyle;
+  @extend h3;
+  .badge {
+    vertical-align: middle;
+    margin: 2px 3px;
+  }
+}
+
 

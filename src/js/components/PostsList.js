@@ -1,24 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from './LoadingSpinner';
+import { Button } from 'reactstrap';
+import renderCategories from './renderCategories';
 
 class PostsList extends Component {
   componentWillMount() {
     this.props.fetchPosts();
-  }
-
-  renderCategories(categories) {
-     return categories &&
-	      categories.split('\,')
-		    .map((category, index) => {
-		    	category = category.trim();
-		    	return <Link
-				    to={"/filter/" + category}
-				    key={index}
-				    className="badge badge-primary category">
-				    {category}
-				    </Link>
-		    });
   }
 
   renderPosts(posts) {
@@ -28,7 +16,9 @@ class PostsList extends Component {
 		      <Link className="post" to={"/posts/view/" + post.id}>
 			      <div className="clearfix">
 				      <h3 className="title float-left">{post.title ? post.title : '\"No Title Was provided\"'}</h3>
-				      <div className="categories float-right">{this.renderCategories(post.categories)}</div>
+				      <div className="categories float-right">
+					      {renderCategories(post.categories)}
+				      </div>
 			      </div>
 		      </Link>
 	      </li>
