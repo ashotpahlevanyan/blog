@@ -4,7 +4,7 @@
    License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, .articles .article .categories, h4, h5, h6, p, blockquote, pre,
+h1, h2, h3, .posts .post .categories, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -126,7 +126,7 @@ body {
 }
 /* ==== Remote Fonts ====
 */
-.headingStyle, .articles .article .categories, h1, h2, h3, h4, h5, h6 {
+.headingStyle, .posts .post .categories, h1, h2, h3, h4, h5, h6 {
   font-family: Lat, sans-serif;
   font-weight: normal;
   line-height: 1.2;
@@ -144,7 +144,7 @@ h2 {
   font-size: 2em;
 }
 
-h3, .articles .article .categories {
+h3, .posts .post .categories {
   font-size: 1.5em;
 }
 
@@ -351,6 +351,10 @@ h6 {
     transform: rotate(360deg);
   }
 }
+.headerWrapper {
+  padding: 30px 20px 10px;
+}
+
 body {
   background-color: blueviolet;
   color: white;
@@ -371,17 +375,17 @@ h1 {
   right: 0;
 }
 
-.articles {
+.posts {
   position: static;
 }
-.articles .list {
+.posts .list {
   padding: 0;
   list-style: none;
 }
-.articles li + li {
+.posts li + li {
   margin-top: 10px;
 }
-.articles .article {
+.posts .post {
   display: block;
   padding: 10px;
   position: relative;
@@ -395,14 +399,14 @@ h1 {
   border-radius: 5px;
   cursor: pointer;
 }
-.articles .article .title {
+.posts .post .title {
   font-weight: bold;
 }
-.articles .article .content {
+.posts .post .content {
   display: none;
   padding: 0 10px;
 }
-.articles .article .delete {
+.posts .post .delete {
   display: none;
   position: absolute;
   top: 15px;

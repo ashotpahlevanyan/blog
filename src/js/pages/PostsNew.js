@@ -6,7 +6,7 @@ class PostsNew extends Component {
   render() {
     return (
       <div>
-        <HeaderContainer type="posts_new"/>
+        <HeaderContainer type="postsNew"/>
         <PostFormContainer />
       </div>
     );

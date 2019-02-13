@@ -6,7 +6,7 @@ class PostsIndex extends Component {
   render() {
     return (
       <div>
-        <HeaderContainer type="posts_index"/>
+        <HeaderContainer type="postsIndex"/>
         <PostsList />
       </div>
     );
