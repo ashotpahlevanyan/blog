@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 
+
 class Header extends Component {
   static contextTypes = {
     router: PropTypes.object
@@ -65,11 +66,9 @@ class Header extends Component {
 
 	render() {
 			return (
-			 <nav className="navbar navbar-default navbar-static-top">
-			      <div id="navbar" className="navbar-collapse collapse">
-			      {this.renderLinks()}
-	      		</div>     
-			 </nav>				
+			 <div>
+				 {this.renderLinks()}
+			 </div>
 			);
 	}
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import store from './js/store/index';
-import Root from './js/components/Root';
+import Root from './js/Root';
 import registerServiceWorker from './registerServiceWorker';
 
 console.log(store.getState());
