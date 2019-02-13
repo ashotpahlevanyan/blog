@@ -1,9 +1,5 @@
-import { articleActionCreators, articleFunctions } from './articleActions';
+import { articleActionCreators as articles} from './articleActions';
 
 export const actions = {
-	articleActions: articleActionCreators
-};
-
-export const actionFunctions = {
-	articleFunctions: articleFunctions
+	articleActions: articles
 };

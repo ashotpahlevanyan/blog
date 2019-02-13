@@ -40,7 +40,8 @@ class AddArticle extends Component {
 	render() {
 		const { handleSubmit, pristine, reset, submitting } = this.props;
 		return (
-			<Form onSubmit={handleSubmit} className="addArticleForm">
+			<Form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))} className="addArticleForm">
+				<a className="back" href="/articles">Back To </a>
 				<h2 className="formHeadline">Create New Article</h2>
 				<Field
 					name="title"

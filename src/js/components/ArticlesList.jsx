@@ -3,8 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import articleActionCreators from '../actions/articleActions';
-import { Button } from 'reactstrap';
-import ArticleItem from './ArticleItem';
+import ArticleListItem from './ArticleListItem';
 import LoadingSpinner from './LoadingSpinner';
 import MessageAlert from './MessageAlert';
 
@@ -18,7 +17,6 @@ class ArticlesList extends React.Component {
 		console.log(this.boundActionCreators);
 
 		this.handleArticleClick = this.handleArticleClick.bind(this);
-		this.handleArticleDelete = this.handleArticleDelete.bind(this);
 	}
 
 	componentDidMount() {
@@ -28,11 +26,8 @@ class ArticlesList extends React.Component {
 		dispatch(action);
 	}
 
-	handleArticleDelete(id) {
-		console.log(`${id} : clicked`);
-	}
 	handleArticleClick(id) {
-		console.log(`${id} : deleted`);
+		console.log(`${id} : clicked`);
 	}
 	render() {
 		let {articles, loading, error} = this.props;
@@ -52,15 +47,19 @@ class ArticlesList extends React.Component {
 
 				{
 					error ?
-						<MessageAlert color='danger' className='stacked' message='Articles Loaded Done!' delay={2000} /> : ''
+						<MessageAlert color='danger' className='pinned' message='Articles Loaded Done!' delay={1500} /> : ''
 				}
 
 				{
 					articles && <ul className='list'>
 					{ articles.length ?
-						articles.map(article => <ArticleItem key={article.id} {...article}
-							onClick={this.handleArticleClick(article.id)}
-							onDelete={this.handleArticleDelete(article.id)}
+						articles.map(article => <ArticleListItem
+							key={article.id}
+							id={article.id}
+							title={article.title}
+							content={article.content}
+							categories={article.categories}
+							onClick={() => this.handleArticleClick(article.id)}
 						/>)
 						:
 						<li><h2>No Articles Found</h2></li>}
